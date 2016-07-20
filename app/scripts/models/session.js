@@ -7,6 +7,7 @@ const Session = Backbone.Model.extend({
         username: '',
     },
     parse: function(response) {
+      //parses through response to store data below to keep and access for later if needed
       if (response) {
       return {
         authtoken: response._kmd.authtoken,
@@ -19,5 +20,8 @@ const Session = Backbone.Model.extend({
 });
 
 let session = new Session();
+//only one session at a time so instance of constructor should be built here
+
+//build localstorage
 
 export default session;

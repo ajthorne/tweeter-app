@@ -33,6 +33,7 @@ const Login = Backbone.View.extend({
         });
     },
     template: function() {
+      //holds what element will be 'stuffed' with
         return `
             <h2>Tweet the World</h2>
             <input class="username" type="text" placeholder="Enter your username">
@@ -42,6 +43,7 @@ const Login = Backbone.View.extend({
   },
   render: function () {
     this.$el.html(this.template());
+    //renders template into the element assigned above
     return this;
   }
 });

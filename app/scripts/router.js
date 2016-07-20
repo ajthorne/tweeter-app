@@ -5,6 +5,8 @@ import Login from './views/login';
 import Signup from './views/signup';
 import session from './models/session';
 import settings from './settings';
+import NewTweet from './views/newTweet';
+import Feed from './views/feed';
 
 const Router = Backbone.Router.extend({
   routes: {
@@ -25,6 +27,7 @@ const Router = Backbone.Router.extend({
 
   signUpFunction() {
     let signup = new Signup();
+    //new instance of constructor
     $('.container').empty().append(signup.render().$el);
 
   },
@@ -45,7 +48,9 @@ const Router = Backbone.Router.extend({
   },
 
   newTweetFunction() {
-    $('.container').empty().append(nav.render().$el);
+    let addTweet = new NewTweet();
+    $('.container').empty().append(nav.render().$el).append(addTweet.render().$el);
+    //renders nav element and appends to container
 
   },
 
@@ -55,7 +60,8 @@ const Router = Backbone.Router.extend({
   },
 
   feedFunction() {
-    $('.container').empty().append(nav.render().$el);
+    let tweetsView = new Feed();
+    $('.container').empty().append(nav.render().$el).append(tweetsView.render().$el);
 
   }
 

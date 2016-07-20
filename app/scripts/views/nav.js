@@ -13,7 +13,7 @@ const Nav = Backbone.View.extend({
     this.$el.html(this.template());
     return this;
   }
-  //set logout function
+  //set logout function --currently in router constructor
 });
 
 let nav = new Nav();

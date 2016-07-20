@@ -17,7 +17,7 @@ $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
 
 if (!session.username) {
   // router.navigate('login', {trigger: true});
-  //not rerouting to login page
+  //not rerouting to login page --not sure why
 
   location.hash = 'login';
   //correctly reroutes
