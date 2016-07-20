@@ -24,8 +24,8 @@ const Login = Backbone.View.extend({
             success: function(model, response) {
                 model.unset('password');
                 //tells model to forget password info so it is not shown
-                
-                console.log('You successfully logged in!');
+
+                console.log('Hello! You successfully logged in!');
                 router.navigate('tweetfeed', {
                     trigger: true
                 });
@@ -36,7 +36,7 @@ const Login = Backbone.View.extend({
         return `
             <h2>Tweet the World</h2>
             <input class="username" type="text" placeholder="Enter your username">
-            <input class="password" type="text" placeholder="Enter your password">
+            <input class="password" type="password" placeholder="Enter your password">
             <input class="submit" type="submit" value="Login">
     `;
   },

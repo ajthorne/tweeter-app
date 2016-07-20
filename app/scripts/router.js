@@ -3,6 +3,8 @@ import Backbone from 'backbone';
 import nav from './views/nav';
 import Login from './views/login';
 import Signup from './views/signup';
+import session from './models/session';
+import settings from './settings';
 
 const Router = Backbone.Router.extend({
   routes: {
@@ -28,7 +30,18 @@ const Router = Backbone.Router.extend({
   },
 
   logoutFunction() {
-
+    session.save(null, {
+      url: `https://baas.kinvey.com/user/${settings.appId}/_logout`,
+      success: () => {
+        session.clear();
+        this.navigate('login', {trigger: true});
+        console.log('You are logged out. Goodbye!');
+      },
+      error: () => {
+        console.log('You failed to log out!');
+      }
+    });
+    //move to nav view?
   },
 
   newTweetFunction() {
