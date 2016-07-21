@@ -39,6 +39,8 @@ const Login = Backbone.View.extend({
             <input class="username" type="text" placeholder="Enter your username">
             <input class="password" type="password" placeholder="Enter your password">
             <input class="submit" type="submit" value="Login">
+            <p>Not a current user? Sign up <a href="#signup">here</a>.
+
     `;
   },
   render: function () {

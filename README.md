@@ -1,25 +1,18 @@
-# Basic Build with NPM scripts
-This is a project scaffolding and build tool for the TIY Austin Front-End Engineering course. Feel free to use and enjoy! Feedback and PRs welcome!
+###Day 27 assignment --Twitter Clone
 
-## Features
-- A bare bones scaffolding for an SPA, without any libraries built in
-- A static server for serving up your dev environment via http
-- `app` directory for development, preloaded with an `index.html`, `scripts/entry.js`, `scss/main.scss` and `assets/`
-- `dist` directory for deployable code
-- es2015 and babel, including module syntax
-- sass (.scss)
+##Planning Process
+1. When beginning this assignment, I sketched out all of my wireframes.
+2. Each wireframe represented a "view" and was assigned a route.
+3. For each view, I wrote out the user events that it handled and considered any additional custom functions I'd have to add.
 
-## Installation
-- Clone this repo (or fork then clone, if you prefer)
-- Remove the git history by running `rm -rf .git`
-- Set up a new git repo
-- Run `npm install`
+##Building Process
+1. I began building my router as this helps me see all the views I will eventually want my user to access.
+2. I moved on to login and sign up functionality. I had some troubleshooting issues with unsetting the password once the user logged in or signed up.
+3. After completing those, I created my navigation where my logout function lives. I debated the best place for this but it is currently placed on my router even though it is part of the navigation view.
+4. Building the tweet feed was my next step. I had to do some troubleshooting to render the children to the parent ul.
+5. I built the user specificity to edit and delete your own tweets.
 
-## Use
-- `npm install` will scaffold your project AND start the dev server
-- `npm start` will start the dev server and watch for changes
-- `npm run deploy` will push the content of `dist/` to gh-pages
-- When the server is running, your site will be live on [http://localhost:8080/](http://localhost:8080/)
-
-## Dependencies
-- `sass` [install guide here](http://sass-lang.com/install)
+##Problems
+1. Editing is not functional as I had trouble getting the specific tweet to edit from the server.
+2. Local storage still needs to be built
+3. Minimal styling due to time constraint

@@ -5,8 +5,9 @@ const Nav = Backbone.View.extend({
   tagName: 'nav',
   template: function () {
     return `
-    <a href="#newtweet">Compose Tweet</a>
-    <a href="#tweetfeed">See all Tweets</a>
+    <i class="fa fa-twitter" id="twitter-icon"></i>
+    <a href="#newtweet">Compose Tweet</a> |
+    <a href="#tweetfeed">See all Tweets</a> |
     <a class="logout" href="#logout">Logout</a>`;
   },
   render: function () {

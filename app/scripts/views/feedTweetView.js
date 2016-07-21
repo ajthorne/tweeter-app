@@ -9,16 +9,17 @@ const FeedTweetView = Backbone.View.extend({
   className: 'individual-tweet',
   template: function() {
     let deleteBtns = '';
+    //shows as empty space unless it matches criteria below
     if (this.model.get('username') === session.get('username')) {
-      // console.log(this.model.get('username'));
+      //if user that is logged in equals the user who wrote it then...
       deleteBtns = `<input class="delete" type="button" value="Delete">
                     <input class="edit" type="button" value="Edit">`;
     }
 
     return `
-    <span class="individual-body">${this.model.get('body')}</span>
     <span class="individual-author">${this.model.get('username')}</span>
     <time class="individual-timestamp">${moment(this.model.get('timestamp')).format('MMMM Do, YYYY h:mm a')}</time>
+    <span class="individual-body">${this.model.get('body')}</span>
     <span class="options">${deleteBtns}</span>`;
   },
 
@@ -30,13 +31,15 @@ const FeedTweetView = Backbone.View.extend({
 
   deleteFunction: function () {
     this.model.destroy();
+    //destroys tweet that was clicked on
     console.log('You deleted this tweet!');
   },
 
-  editFunction: function () {
-    router.navigate('edittweet', {trigger: true});
+  editFunction: function (id) {
+    router.navigate(`edittweet/${session.get('userId')}`, {trigger: true});
+    //reroutes user to edit page
+    //grabbing id of tweet which was stored when it was created through parse function
     console.log('Changing it up..');
-
   },
 
   render: function () {

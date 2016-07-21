@@ -7,6 +7,7 @@ import session from './models/session';
 import settings from './settings';
 import NewTweet from './views/newTweet';
 import Feed from './views/feed';
+import EditTweet from './views/edittweet';
 
 const Router = Backbone.Router.extend({
   routes: {
@@ -14,7 +15,7 @@ const Router = Backbone.Router.extend({
     signup: 'signUpFunction',
     logout: 'logoutFunction',
     newtweet: 'newTweetFunction',
-    edittweet: 'editTweetFunction',
+    'edittweet/:id': 'editTweetFunction',
     tweetfeed: 'feedFunction',
     '/*': 'loginFunction'
   },
@@ -54,8 +55,10 @@ const Router = Backbone.Router.extend({
 
   },
 
-  editTweetFunction() {
-    $('.container').empty().append(nav.render().$el);
+  editTweetFunction(id) {
+    console.log(id);
+    let editTweet = new EditTweet(id);
+    $('.container').empty().append(nav.render().$el).append(editTweet.render().$el);
 
   },
 
