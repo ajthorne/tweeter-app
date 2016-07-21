@@ -1,4 +1,4 @@
-###Day 27 assignment --Twitter Clone
+#Day 27 assignment --Twitter Clone
 
 ##Planning Process
 1. When beginning this assignment, I sketched out all of my wireframes.
