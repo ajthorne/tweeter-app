@@ -2,6 +2,7 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 import tweetsCollection from '../collections/tweets';
 import FeedTweetView from './feedTweetView';
+import session from '../models/session';
 
 const Feed = Backbone.View.extend({
     initialize: function () {
@@ -18,7 +19,7 @@ const Feed = Backbone.View.extend({
     className: 'feed-container',
     template: function() {
         return `
-    <h2>What's happening?</h2>
+    <h2>What's happening, ${session.get('name')}?</h2>
     <ul class="feed-list">
     </ul>`;
     },
@@ -35,7 +36,7 @@ const Feed = Backbone.View.extend({
             });
 
             feedTweet.render();
-            this.$('.feed-list').append(feedTweet.$el);
+            this.$('.feed-list').prepend(feedTweet.$el);
         });
         return this;
     }
